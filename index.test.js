@@ -16,37 +16,27 @@ describe("basicOp", () => {
     const result = basicOp("+", 13, 14);
     expect(result).toBe(27);
   });
-});
 
-describe("basicOp", () => {
   test("should return -7 when passed 13 and 20", () => {
     const result = basicOp("-", 13, 20);
     expect(result).toBe(-7);
   });
-});
 
-describe("basicOp", () => {
   test("multiply 7 * 1 to equal 7", () => {
     const result = basicOp("*", 1, 7);
     expect(result).toBe(7);
   });
-});
 
-describe("basicOp", () => {
   test("should return 7 when passed 49 and 7", () => {
     const result = basicOp("/", 49, 7);
     expect(result).toBe(7);
   });
-});
 
-describe("basicOp", () => {
   test("should return 0 when passed 7, 7", () => {
     const result = basicOp(">", 7, 7);
     expect(result).toBe(0);
   });
-});
 
-describe("basicOp", () => {
   test("should return 0 when passed 104, 3", () => {
     const result = basicOp("||", 31, 8);
     expect(result).toBe(0);
@@ -80,6 +70,13 @@ describe("getTime", () => {
       "Breakfast at 09:59, Dinner at 21:00 in the room number 18:99"
     );
     expect(result).toBe("09:59");
+  });
+
+  test('should return first valid time in the string or empty string if valid time is not found. Valid time has format "hh:mm"', () => {
+    const result = getTime(
+      "Room number is 777:77"
+    );
+    expect(result).toBe("");
   });
 });
 
@@ -120,10 +117,3 @@ describe("alphabetPosition", () => {
   });
 });
 
-// describe ('division', function () {
-//     test ('should return 7 when passed 49 and 7',
-//     function () {
-//         const result = division(49, 7);
-//         expect(result).toBe(7)
-//     });
-// });

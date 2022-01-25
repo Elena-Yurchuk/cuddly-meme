@@ -91,7 +91,7 @@ export function vowelCount(string) {
 /* TASK 10 */
 
 export function alphabetPosition(string) {
-  let alphabet = [
+  const alphabet = [
     "a",
     "b",
     "c",
@@ -120,7 +120,7 @@ export function alphabetPosition(string) {
     "z",
   ];
   let letters = string.toLowerCase().match(/[a-z]/g);
-  let numbers = [];
+  const numbers = [];
 
   for (let i = 0; i < letters.length; i++) {
     letters[i] = alphabet.indexOf(letters[i]) + 1;
