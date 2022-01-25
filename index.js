@@ -98,5 +98,5 @@ export function alphabetPosition(string) {
 			result += (code - 64) + " ";
 		}
   }
-  return result.slice(0, result.length - 1)
+  return result.slice(0, result.length - 1);
 }
