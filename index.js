@@ -34,9 +34,9 @@ export function phoneNumber(arr) {
 /* TASK 4 */
 
 export function getOperands(expression) {
-  const operator = expression.split(" ");
+  const elements = expression.split(" ");
 
-  return `a: ${operator[0]}, b: ${operator[2]}`;
+  return `a: ${elements[0]}, b: ${elements[2]}`;
 }
 
 /* TASK 5 */
@@ -100,43 +100,3 @@ export function alphabetPosition(string) {
   }
   return result.slice(0, result.length - 1);
 }
-
-// export function alphabetPosition(string) {
-//   const alphabet = [
-//     "a",
-//     "b",
-//     "c",
-//     "d",
-//     "e",
-//     "f",
-//     "g",
-//     "h",
-//     "i",
-//     "j",
-//     "k",
-//     "l",
-//     "m",
-//     "n",
-//     "o",
-//     "p",
-//     "q",
-//     "r",
-//     "s",
-//     "t",
-//     "u",
-//     "v",
-//     "w",
-//     "x",
-//     "y",
-//     "z",
-//   ];
-//   let letters = string.toLowerCase().match(/[a-z]/g);
-//   const numbers = [];
-
-//   for (let i = 0; i < letters.length; i++) {
-//     letters[i] = alphabet.indexOf(letters[i]) + 1;
-//     numbers.push(letters[i]);
-//   }
-
-//   return numbers.join(" ");
-// }
