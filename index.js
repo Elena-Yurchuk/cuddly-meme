@@ -84,7 +84,7 @@ export function countOccurrences(phrase, letter) {
 /* TASK 9 */
 
 export function vowelCount(string) {
-  const str = string.match(/[aeiou]/g) ?? [];
+  const str = string.match(/[aeiou]/gi) ?? [];
   return str.length;
 }
 
@@ -100,3 +100,43 @@ export function alphabetPosition(string) {
   }
   return result.slice(0, result.length - 1);
 }
+
+// export function alphabetPosition(string) {
+//   const alphabet = [
+//     "a",
+//     "b",
+//     "c",
+//     "d",
+//     "e",
+//     "f",
+//     "g",
+//     "h",
+//     "i",
+//     "j",
+//     "k",
+//     "l",
+//     "m",
+//     "n",
+//     "o",
+//     "p",
+//     "q",
+//     "r",
+//     "s",
+//     "t",
+//     "u",
+//     "v",
+//     "w",
+//     "x",
+//     "y",
+//     "z",
+//   ];
+//   let letters = string.toLowerCase().match(/[a-z]/g);
+//   const numbers = [];
+
+//   for (let i = 0; i < letters.length; i++) {
+//     letters[i] = alphabet.indexOf(letters[i]) + 1;
+//     numbers.push(letters[i]);
+//   }
+
+//   return numbers.join(" ");
+// }
