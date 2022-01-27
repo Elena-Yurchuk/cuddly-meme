@@ -49,20 +49,20 @@ export function getTime(string) {
 /* TASK 6 */
 
 export function isPalindrome(text) {
-  let string = text.toLowerCase().match(/\w/g).join("");
+  const string = text.toLowerCase().match(/\w/g).join("");
   const palindrome = string.split("").reverse().join("");
 
-  return string === palindrome ? true : false;
+  return string === palindrome;
 }
 
 /* TASK 7 */
 
 export function swapCase(letters) {
-  let str = letters.split("").map((item) => {
-    if (item == item.toUpperCase()) {
-      return (item = item.toLowerCase());
+  const str = letters.split("").map((item) => {
+    if (item === item.toUpperCase()) {
+      return item.toLowerCase();
     } else {
-      return (item = item.toUpperCase());
+      return item.toUpperCase();
     }
   });
   return str.join("");
@@ -74,7 +74,7 @@ export function countOccurrences(phrase, letter) {
 	const expression = phrase.toLowerCase();
   let counter = 0;
   for (let i = 0; i < expression.length; i++) {
-    if (expression[i] == letter) {
+    if (expression[i] === letter) {
       counter++;
     }
   }
