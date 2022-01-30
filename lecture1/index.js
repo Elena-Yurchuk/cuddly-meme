@@ -15,7 +15,6 @@ export const basicOp = (operand, a, b) => {
   }
 };
 
-
 /* TASK 2 */
 
 export function stringMerge(str1, str2, letter) {

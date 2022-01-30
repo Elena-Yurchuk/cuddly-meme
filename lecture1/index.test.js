@@ -1,6 +1,7 @@
 
 import {
   basicOp,
+  stringMerge,
   phoneNumber,
   getOperands,
   getTime,
@@ -9,7 +10,6 @@ import {
   countOccurrences,
   vowelCount,
   alphabetPosition,
-  stringMerge,
 } from './index';
 
 describe('basicOp', () => {
