@@ -17,7 +17,9 @@ module.exports = {
   rules: {
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
-    'indent': ['error', 2, { 'SwitchCase': 1 }],
+    'indent': ['error', 2, {
+      'SwitchCase': 1, 'ArrayExpression': 1, 'ObjectExpression': 1,
+    }],
     semi: ['error', 'always'],
     'comma-dangle': ['error', 'always-multiline'],
     'no-multiple-empty-lines': 'error',
@@ -66,6 +68,7 @@ module.exports = {
         'minProperties': 2,
       },
     }],
+    'space-infix-ops': ['error', { 'int32Hint': false }],
   },
 };
 
