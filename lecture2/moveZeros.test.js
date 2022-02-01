@@ -1,4 +1,4 @@
-import { moveZeros } from './move-zeroz';
+import { moveZeros } from './moveZeros';
 
 describe('moveZeros', () => {
   test('should return [false,1,1,2,1,3,"a",0,0] moved all zeros to the end', () => {

@@ -1,4 +1,4 @@
-import { transformState } from './transform-state';
+import { transformState } from './transformState';
 
 describe('transformState', () => {
   test('Should work with a long list of operations', () => {

@@ -1,4 +1,4 @@
-import { isPrime } from './is-prime';
+import { isPrime } from './isPrime';
 
 describe('isPrime', () => {
   test('should return true passed 2', () => {

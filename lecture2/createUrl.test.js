@@ -1,4 +1,4 @@
-import { createUrl } from './create-url';
+import { createUrl } from './createUrl';
 
 describe('createUrl', () => {
   test('should replace {id} with 0', () => {

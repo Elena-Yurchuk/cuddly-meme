@@ -1,4 +1,4 @@
-import { reverseWords } from './reverse-words';
+import { reverseWords } from './reverseWords';
 
 describe('reverseWords', () => {
   test('should reverse string double  spaces to string elbuod  secaps', () => {

@@ -1,4 +1,4 @@
-import { invertColor } from './invert-color';
+import { invertColor } from './invertColor';
 
 describe('invertColor', () => {
   test('should return #ffffff after inverting #000000', () => {

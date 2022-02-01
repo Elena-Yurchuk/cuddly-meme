@@ -1,4 +1,4 @@
-import { fearNotLetter } from './fear-not-letter'; 
+import { fearNotLetter } from './fearNotLetter'; 
 
 describe('fearNotLetter', () => {
   test('should return letter d passed a string abce', () => {

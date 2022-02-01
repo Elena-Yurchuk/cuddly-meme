@@ -1,4 +1,4 @@
-import { squareList } from './square-list';
+import { squareList } from './squareList';
 
 describe('squareList', () => {
   test('should return [16, 1764, 36] passed [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2]', () => {

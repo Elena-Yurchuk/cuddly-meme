@@ -1,4 +1,4 @@
-import { openOrSenior } from './open-or-senior';
+import { openOrSenior } from './openOrSenior';
 
 describe('openOrSenior', () => {
   test('should return Open passed [31, 10], Senior passed [55,23], Open passed [20, 0], Senior passed [41, 16]', () => {

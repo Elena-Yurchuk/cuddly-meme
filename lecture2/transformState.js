@@ -1,12 +1,12 @@
 export const transformState = (state, transforms) => {
-  transforms.map((item) => {
+  transforms.forEach((item) => {
     if (item.operation === 'addProperties') {
       const objProperties = item.properties;
   
       for (const key in objProperties) {
-        const propertyKey = key;
+        const addPropertyKey = key;
   
-        state[propertyKey] = objProperties[key];
+        state[addPropertyKey] = objProperties[key];
       }
     } else if (item.operation === 'clear') {
       Object.keys(state).forEach(key => delete state[key]);

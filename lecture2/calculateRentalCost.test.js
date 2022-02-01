@@ -1,4 +1,4 @@
-import { calculateRentalCost } from './calculate-rental-cost';
+import { calculateRentalCost } from './calculateRentalCost';
 
 describe('calculateRentalCost', () => {
   test('should return 80 as the rental cost of two days. ', () => {
