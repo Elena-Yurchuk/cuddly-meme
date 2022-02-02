@@ -1,4 +1,8 @@
 export const fearNotLetter = (letters) => {
+  if (typeof letters !== 'string') {
+    return 'Error: wrong type of argument';
+  }
+
   let firstLetter = letters.charCodeAt(0) + 1;
   let missingLetter = '';
 

@@ -1,4 +1,8 @@
 export const transformStateWithClones = (state, transforms) => {
+  if (typeof state !== 'object' || state === null || !Array.isArray(transforms)) {
+    return 'Error: wrong type of argument';
+  }
+  
   const cloneState = {...state};
   
   const arrayWithStateClones = [];

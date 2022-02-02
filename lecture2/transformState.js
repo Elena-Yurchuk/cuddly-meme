@@ -1,4 +1,8 @@
 export const transformState = (state, transforms) => {
+  if (typeof state !== 'object' || state === null || transforms.constructor !== Array) {
+    return 'Error: wrong type of argument';
+  }
+
   transforms.forEach((item) => {
     if (item.operation === 'addProperties') {
       const objProperties = item.properties;

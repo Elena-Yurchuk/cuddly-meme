@@ -1,4 +1,8 @@
 export const makeArmy = (number) => {
+  if (typeof number !== 'number') {
+    return 'Error: wrong type of argument';
+  }
+  
   const arrayWithNumbers = [];
   let counter = 0;
 

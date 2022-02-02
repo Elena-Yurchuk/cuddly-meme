@@ -31,6 +31,9 @@ describe('tranformStateWithClones', () => {
         foo: 'bar', name: 'Jim', another: 'one',
       },
     ],
+    {
+      foo: 'bar', bar: 'foo',
+    },
     );
   });
 
@@ -62,6 +65,9 @@ describe('tranformStateWithClones', () => {
         foo: 'bar', name: 'Jim',
       },
     ],
+    {
+      foo: 'bar', bar: 'foo',
+    },
     );
   }); 
 
@@ -77,6 +83,7 @@ describe('tranformStateWithClones', () => {
     expect(result).toStrictEqual([
       {name: 'Jim'},
     ],
+    {},
     );
   });
 });

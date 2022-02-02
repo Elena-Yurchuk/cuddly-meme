@@ -4,6 +4,10 @@ export const calculateRentalCost = (days) => {
   const discountOnThirdRentalDay = 20;
   const discountOnSeventhRentalDay = 50;
 
+  if (typeof days !== 'number') {
+    return 'Error: wrong type of argument';
+  }
+
   if (days <= 2) {
     rentalCost = days * rentalCostOfOneDay;
   } else if (days >= 3 && days < 7) {
