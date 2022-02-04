@@ -4,6 +4,6 @@ export const squareList = (numbers) => {
   }
 
   return numbers
-    .filter((number) => Number.isInteger(number) && number >= 0)
+    .filter((number) => Number.isInteger(number) && Math.sign(number) > 0)
     .map(number => Math.pow(number, 2));
 };
