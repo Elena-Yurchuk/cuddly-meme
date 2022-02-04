@@ -3,21 +3,16 @@ export const makeArmy = (number) => {
     return 'Error: wrong type of argument';
   }
   
-  const arrayWithNumbers = [];
+  const army = [];
   let counter = 0;
 
   while (counter < number) {
     const temp = counter;
 
-    arrayWithNumbers.push(() => temp);
+    army.push(() => temp);
     counter++;
   }
 
-  return arrayWithNumbers;
+  return army;
 };
 
-const shooters = makeArmy(10);
-
-shooters[0](); 		
-shooters[5]();		
-shooters[9]();
