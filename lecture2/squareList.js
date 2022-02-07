@@ -5,10 +5,10 @@ export const squareList = (numbers) => {
   
   return numbers.reduce((total, number) => {
     if (Number.isInteger(number) && Math.sign(number) > 0) {
-      total.push(Math.pow(number, 2));
+      return [...total, Math.pow(number, 2)];
     }
 
-    return total;
+    return [...total];
     
   }, []);
 };
