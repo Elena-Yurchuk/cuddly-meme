@@ -1,0 +1,33 @@
+@import "utils";
+@import "fonts";
+@import "typography";
+@import "media";
+
+body {
+  background: $c-gray;
+}
+#calendar {
+  margin: 50px auto;
+}
+
+table {
+  border-collapse: collapse;
+  color: #113b88;
+  background-color: white;
+  margin: 0 auto;
+  width: 500px;
+  height: 400px;
+}
+
+td,
+th {
+  border: 1px solid #113b88;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  font-weight: bold;
+  background-color: #9655fa;
+  color: #fff;
+}

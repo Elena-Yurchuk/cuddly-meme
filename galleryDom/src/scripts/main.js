@@ -8,15 +8,11 @@ thumbs.forEach((link) => {
     event.preventDefault();
 
     const href = link.getAttribute('href');
-    const title = link.getAttribute('title');
-  
-    showThumb(href, title);
-    
+
+    changeImageOnClick(href); 
   });
 });
 
-
-const showThumb = (href, title) => {
+const changeImageOnClick = (href) => {
   largeImg.src = href;
-  largeImg.alt = title;
 };
