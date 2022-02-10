@@ -1,0 +1,56 @@
+@import "utils";
+@import "fonts";
+@import "typography";
+@import "media";
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.gallery {
+  max-width: 920px;
+  margin: 0 auto;
+  &__img-box {
+    width: 100%;
+    margin: 50px auto 20px;
+    img {
+      width: 100%;
+      border: 4px solid #000;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
+    }
+  }
+  &__list {
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: flex start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    @include desktop {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+    .list-item {
+      list-style: none;
+      margin: 0 auto 5px;
+      width: 49%;
+      @include desktop {
+        width: 24%;
+        margin: 0 5px;
+      }
+      img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          @include desktop {
+            height: 130px;
+          }
+        }
+    }
+  }
+}
