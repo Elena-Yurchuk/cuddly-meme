@@ -1,0 +1,91 @@
+@import "utils";
+@import "fonts";
+@import "typography";
+
+body {
+  background: $c-gray;
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+  li {
+    position: relative;
+    transition: all 0.5s ease-out;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: -12px;
+      width: 8px;
+      height: 8px;
+      
+    }
+    
+  }
+}
+
+.tree {
+  &__item {
+    &::before {
+      background-color: blue;
+    }
+  }
+  &__red {
+    &::before {
+      background-color: red;
+    }
+  }
+  &__yellow {
+    &::before {
+      background-color: orange;
+    }
+  }
+  &__purple {
+    &::before {
+      background-color: purple;
+    }
+  }
+  &__green {
+    &::before {
+      background-color: green;
+    }
+  }
+  span {
+    cursor: pointer;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+  .red,
+  .orange,
+  .purple,
+  .green {
+    &::before {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+  }
+  .red {
+    &::before {
+      border: 1px solid red;
+    }
+  }
+  .orange {
+    &::before {
+      border: 1px solid orange;
+    }
+  }
+  .green {
+    &::before {
+      border: 1px solid green;
+    }
+  }
+  .purple {
+    &::before {
+      border: 1px solid purple;
+    }
+  }
+}

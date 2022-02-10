@@ -1,0 +1,90 @@
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background: #eee;
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+ul li::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: -12px;
+  width: 8px;
+  height: 8px;
+}
+
+.tree__item::before {
+  background-color: blue;
+}
+
+.tree__red::before {
+  background-color: red;
+}
+
+.tree__yellow::before {
+  background-color: orange;
+}
+
+.tree__purple::before {
+  background-color: purple;
+}
+
+.tree__green::before {
+  background-color: green;
+}
+
+.tree span {
+  cursor: pointer;
+}
+
+.tree span:hover {
+  font-weight: bold;
+}
+
+.tree .red::before,
+.tree .orange::before,
+.tree .purple::before,
+.tree .green::before {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.tree .red::before {
+  border: 1px solid red;
+}
+
+.tree .orange::before {
+  border: 1px solid orange;
+}
+
+.tree .green::before {
+  border: 1px solid green;
+}
+
+.tree .purple::before {
+  border: 1px solid purple;
+}
+/*# sourceMappingURL=main.css.map */
