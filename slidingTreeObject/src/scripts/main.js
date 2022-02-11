@@ -10,12 +10,12 @@ for (const li of list.querySelectorAll('li')) {
   span.append(span.nextSibling); 
 }
 
-list.onclick = () => {
-  if (event.target.tagName !== 'SPAN') {
+list.addEventListener('click', (ev) => {
+  if (ev.target.tagName !== 'SPAN') {
     return;
   }
 
-  const childrenList = event.target.parentNode.querySelector('ul');
+  const childrenList = ev.target.parentNode.querySelector('ul');
 
   if (!childrenList) {
     return;
@@ -23,11 +23,12 @@ list.onclick = () => {
   childrenList.hidden = !childrenList.hidden;
 
   if (childrenList.hidden) {
-    event.target.classList.add('hide');
-    event.target.classList.remove('show');
+    ev.target.classList.add('hide');
+    ev.target.classList.remove('show');
   } else {
-    event.target.classList.add('show');
-    event.target.classList.remove('hide');
+    ev.target.classList.add('show');
+    ev.target.classList.remove('hide');
   }
-};    
+});
+
 
