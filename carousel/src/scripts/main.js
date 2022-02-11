@@ -5,7 +5,7 @@ const next = document.getElementById('btn-next');
 const slides = document.querySelectorAll('.carousel__slide');
 const dots = document.querySelectorAll('.carousel__dot');
 
-let idx = 0;
+let currentImage = 0;
 
 const activeSlide = (slideImage) => {
   for (const slide of slides) {
@@ -18,7 +18,7 @@ const activeDot = (slideImage) => {
   for (const dot of dots) {
     dot.classList.remove('active');
   }
-  slides[slideImage].classList.add('active');
+  dots[slideImage].classList.add('active');
 };
 
 const prepareCurrentSlide = (index) => {
@@ -27,29 +27,29 @@ const prepareCurrentSlide = (index) => {
 };
 
 const nextSlide = () => {
-  if (idx === slides.length - 1) {
-    idx = 0;
-    prepareCurrentSlide(idx);
+  if (currentImage === slides.length - 1) {
+    currentImage = 0;
+    prepareCurrentSlide(currentImage);
   } else {
-    idx++;
-    prepareCurrentSlide(idx);
+    currentImage++;
+    prepareCurrentSlide(currentImage);
   }
 };
 
 const prevSlide = () => {
-  if (idx === slides.length - 1) {
-    idx = 0;
-    prepareCurrentSlide(idx);
+  if (currentImage === 0) {
+    currentImage = slides.length - 1;
+    prepareCurrentSlide(currentImage);
   } else {
-    idx++;
-    prepareCurrentSlide(idx);
+    currentImage--;
+    prepareCurrentSlide(currentImage);
   }
 };
 
-dots.forEach((item, idxDot) => {
+dots.forEach((item, indexDot) => {
   item.addEventListener('click', () => {
-    idx = idxDot;
-    prepareCurrentSlide(idx);
+    currentImage = indexDot;
+    prepareCurrentSlide(currentImage);
   });
 });
 
