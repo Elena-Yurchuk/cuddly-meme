@@ -1,26 +1,46 @@
+const listOfProducts = document.getElementById('products');
+const listOfPrices = document.getElementById('prices');
+
 const requestURL = 'https://fakestoreapi.com/products';
 
-const sendRequest = (method, url) => {
-  return fetch(url).then(response => {
-    return response.json();
+fetch(requestURL)
+  .then((res) => res.json())
+  .then((data) =>
+    data.map(({ title, price }) => {
+      return {
+        title,
+        price,
+      };
+    }),
+  )
+  .then((data) => {
+    displayProductList(data);
+    displayPricesList(data);
+  })
+  .catch((err) => {
+    throw new Error('Error: ', err);
+  });
+
+const displayProductList = (data) => {
+  const products = data.map((item) => item.title);
+
+  products.sort().forEach((product) => {
+    const li = document.createElement('li');
+
+    li.innerHTML = `${product}`;
+    listOfProducts.appendChild(li);
   });
 };
 
-sendRequest('GET', requestURL)
-  .then((data) => {
-    const products = [];
-    const prices = [];
+const displayPricesList = (data) => {
+  const prices = data.map((item) => item.price);
 
-    for (const item of data) {
-      products.push(item.title);
-      prices.push(item.price);
-    }
-    products.sort();
-    prices.sort((a, b) => b - a);
+  prices
+    .sort((a, b) => a - b)
+    .forEach((price) => {
+      const li = document.createElement('li');
 
-    return products, prices;
-  })
-  .catch(err => {
-    throw new Error ('Error: ', err);
-  });
-
+      li.innerHTML = `${price}`;
+      listOfPrices.appendChild(li);
+    });
+};
