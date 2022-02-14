@@ -21,6 +21,11 @@ fetch(requestURL)
     throw new Error('Error: ', err);
   });
 
+const listOfProductsTitle = document.createElement('h1');
+
+listOfProductsTitle.innerHTML = 'List of Products';
+listOfProducts.prepend(listOfProductsTitle);
+
 const displayProductList = (data) => {
   const products = data.map((item) => item.title);
 
@@ -31,6 +36,11 @@ const displayProductList = (data) => {
     listOfProducts.appendChild(li);
   });
 };
+
+const sortedListOfPrices = document.createElement('h1');
+
+sortedListOfPrices.innerHTML = 'List of Prices';
+listOfPrices.prepend(sortedListOfPrices);
 
 const displayPricesList = (data) => {
   const prices = data.map((item) => item.price);
