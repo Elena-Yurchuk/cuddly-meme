@@ -36,6 +36,16 @@ ul li::before {
   height: 8px;
 }
 
+ul li:hover {
+  font-weight: bold;
+  -webkit-transition: font-weight 0.3s ease-in-out;
+  transition: font-weight 0.3s ease-in-out;
+}
+
+ul li:hover ul {
+  font-weight: normal;
+}
+
 .tree__item::before {
   background-color: blue;
 }

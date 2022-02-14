@@ -21,9 +21,14 @@ ul {
       left: -12px;
       width: 8px;
       height: 8px;
-      
     }
-    
+    &:hover {
+      font-weight: bold;
+      transition: font-weight 0.3s ease-in-out;
+      & ul {
+        font-weight: normal;
+      }
+    }
   }
 }
 
