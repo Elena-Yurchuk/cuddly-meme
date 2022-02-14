@@ -23,6 +23,8 @@ fetch(requestURL)
 
 const listOfProductsTitle = document.createElement('h1');
 
+listOfProductsTitle.style.color = 'blue';
+
 listOfProductsTitle.innerHTML = 'List of Products';
 listOfProducts.prepend(listOfProductsTitle);
 
@@ -38,6 +40,8 @@ const displayProductList = (data) => {
 };
 
 const sortedListOfPrices = document.createElement('h1');
+
+sortedListOfPrices.style.color = 'blue';
 
 sortedListOfPrices.innerHTML = 'List of Prices';
 listOfPrices.prepend(sortedListOfPrices);
