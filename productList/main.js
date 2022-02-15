@@ -1,6 +1,6 @@
 const productsEndpoint = 'https://fakestoreapi.com/products';
 
-const sortedListOfProducts = async () => {
+const sortedListOfProducts = async() => {
   try {
     const listResponse = await fetch(productsEndpoint);
 
