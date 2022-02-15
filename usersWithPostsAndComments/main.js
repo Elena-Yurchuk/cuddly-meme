@@ -1,3 +1,5 @@
+import { axios } from 'axios';
+
 const usersEndpoint = 'https://jsonplaceholder.typicode.com/users';
 
 const postsEndpoint = 'https://jsonplaceholder.typicode.com/posts';
