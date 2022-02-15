@@ -16,8 +16,7 @@ const getUsersWithCompletedTodos = async() => {
     return {
       ...user,
       todos: todos
-        .filter((todo) => user.id === todo.userId)
-        .filter((todo) => todo.completed === true),
+        .filter((todo) => user.id === todo.userId && todo.completed),   
     };
   });
 
