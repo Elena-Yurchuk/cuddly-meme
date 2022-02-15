@@ -7,20 +7,3 @@ body {
   width: 100%;
   height: 100%;
 }
-
-ol {
-  li {
-    cursor: pointer;
-    &:hover {
-      color: blue;
-      font-weight: bold;
-      transition: color .2s ease-in-out;
-      & ul {
-        & li {
-          color: black;
-          font-weight: normal;
-        }
-      }
-    }
-  }
-}
