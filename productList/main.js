@@ -1,60 +1,14 @@
-const listOfProducts = document.getElementById('products');
-const listOfPrices = document.getElementById('prices');
+const productsEndpoint = 'https://fakestoreapi.com/products';
 
-const requestURL = 'https://fakestoreapi.com/products';
-
-fetch(requestURL)
-  .then((res) => res.json())
-  .then((data) =>
-    data.map(({ title, price }) => {
-      return {
-        title,
-        price,
-      };
-    }),
-  )
-  .then((data) => {
-    displayProductList(data);
-    displayPricesList(data);
-  })
-  .catch((err) => {
+const sortedList = async () => {
+  try {
+    const listResponse = await fetch(productsEndpoint);
+    const list = await listResponse.json();
+    list.sort((a, b) => (a.category > b.category) ? 1 : (a.category === b.category) ? ((a.price < b.price) ? 1 : -1) : -1);
+    console.log(list)
+  } catch (err) {
     throw new Error('Error: ', err);
-  });
-
-const listOfProductsTitle = document.createElement('h1');
-
-listOfProductsTitle.style.color = 'blue';
-
-listOfProductsTitle.innerHTML = 'List of Products';
-listOfProducts.prepend(listOfProductsTitle);
-
-const displayProductList = (data) => {
-  const products = data.map((item) => item.title);
-
-  products.sort().forEach((product) => {
-    const li = document.createElement('li');
-
-    li.innerHTML = `${product}`;
-    listOfProducts.appendChild(li);
-  });
+  }
 };
 
-const sortedListOfPrices = document.createElement('h1');
-
-sortedListOfPrices.style.color = 'blue';
-
-sortedListOfPrices.innerHTML = 'List of Prices';
-listOfPrices.prepend(sortedListOfPrices);
-
-const displayPricesList = (data) => {
-  const prices = data.map((item) => item.price);
-
-  prices
-    .sort((a, b) => a - b)
-    .forEach((price) => {
-      const li = document.createElement('li');
-
-      li.innerHTML = `${price}`;
-      listOfPrices.appendChild(li);
-    });
-};
+sortedList();
