@@ -6,7 +6,14 @@ const sortedListOfProducts = async() => {
 
     const list = await listResponse.json();
     
-    list.sort((a, b) => (a.category > b.category) ? 1 : (a.category === b.category) ? ((a.price < b.price) ? 1 : -1) : -1);
+    list.sort((a, b) => a.category.localeCompare(b.category))
+      .sort((a, b) => {
+        if (a.category === b.category) {
+          return b.price - a.price;
+        }
+      });
+
+    return list;
   } catch (err) {
     throw new Error('Error: ', err);
   }
