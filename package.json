@@ -3,14 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type":"commonjs",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "dev": "nodemon src/index.js -- --require node_modules/dotenv/config"
+    "test:one": "jest ./usersWithCompletedTodos/tests/main.test.js",
+    "start": "nodemon ./main.js -- --require node_modules/dotenv/config"
   },
   "author": "Elena",
   "license": "ISC",
   "devDependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/plugin-transform-spread": "^7.16.7",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
     "eslint": "^8.7.0",
