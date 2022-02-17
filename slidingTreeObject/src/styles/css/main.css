@@ -101,4 +101,25 @@ ul li:hover ul {
 .tree .purple::before {
   border: 1px solid purple;
 }
+
+.btn {
+  border-radius: 100rem;
+  font-size: 16px;
+  padding: 10px 50px;
+  color: #000;
+  -webkit-box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+          box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  border: solid 3px transparent;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, #78e4ff, #ff48fa);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  -webkit-box-shadow: 2px 1000px 1px #fff inset;
+          box-shadow: 2px 1000px 1px #fff inset;
+}
+
+.btn:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: white;
+}
 /*# sourceMappingURL=main.css.map */
