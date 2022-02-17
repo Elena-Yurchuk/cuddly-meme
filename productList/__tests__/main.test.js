@@ -10,12 +10,6 @@ beforeEach(() => {
   fetch.mockClear();
 });
 
-// jest.mock('axios');
-
-// beforeEach(() => {
-//   axios.mockClear();
-// });
-
 describe('sortedListOfProducts', () => {
   beforeEach(() => {
     fetch.mockImplementationOnce(() => Promise.resolve({
