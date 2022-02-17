@@ -2,7 +2,7 @@ const usersEndpoint = 'https://jsonplaceholder.typicode.com/users';
 
 const todosEndpoint = 'https://jsonplaceholder.typicode.com/todos';
 
-const getUsersWithCompletedTodos = async() => {
+export const getUsersWithCompletedTodos = async() => {
 
   const usersRes = await fetch(usersEndpoint);
 
@@ -22,5 +22,7 @@ const getUsersWithCompletedTodos = async() => {
 
   return allUsers;
 };
-
-getUsersWithCompletedTodos(); 
+ 
+(async() => {
+  await getUsersWithCompletedTodos(); 
+});
