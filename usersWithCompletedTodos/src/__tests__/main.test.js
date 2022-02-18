@@ -2,9 +2,7 @@ import { getUsersWithCompletedTodos } from '../scripts/main';
 
 global.fetch = jest.fn(() =>
   Promise.resolve({
-    json: () => Promise.resolve({
-      json: () => Promise.resolve(),
-    }),
+    json: () => Promise.resolve(),
   }),
 );
 
@@ -13,6 +11,12 @@ beforeEach(() => {
 });
 
 describe('getUsersWithCompletedTodos', () => {
+  const users = [
+    {
+      id: 7, name: 'Elena',
+    },
+  ];
+
   const todos = [
     {
       userId: 7,
@@ -22,20 +26,16 @@ describe('getUsersWithCompletedTodos', () => {
     },
   ];
 
-  beforeEach(() => {
+  test('getUsersWithCompletedTodos', async() => {
     fetch.mockImplementationOnce(() => Promise.resolve({
-      json: () => Promise.resolve({data: [{
-        id: 7, name: 'Elena',
-      }]}),
+      json: () => Promise.resolve({data: users}),
     }));
     
 
     fetch.mockImplementationOnce(() => Promise.resolve({
       json: () => Promise.resolve({ data: todos}),
     }));
-  });
 
-  test('getUsersWithCompletedTodos', async() => {
     const result = await getUsersWithCompletedTodos();
 
     expect(result).toEqual([{
