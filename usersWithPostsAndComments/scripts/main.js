@@ -8,16 +8,14 @@ const COMMENTS_ENDPOINT = 'https://jsonplaceholder.typicode.com/comments';
 
 export const getUsersWithPostsAndComments = async() => {
   try {
-    const usersRes = await axios.get(USERS_ENDPOINT);
-
-    const postsRes = await axios.get(POSTS_ENDPOINT);
-
-    const commentsRes = await axios.get(COMMENTS_ENDPOINT);
-
+    const [usersRes, postsRes, commentsRes] = await Promise.all([
+      axios.get(USERS_ENDPOINT),
+      axios.get(POSTS_ENDPOINT),
+      axios.get(COMMENTS_ENDPOINT),
+    ]);
+      
     const users = usersRes.data;
-
     const posts = postsRes.data;
-
     const comments = commentsRes.data;
 
     const allUsers = users.map((user) => {
@@ -38,7 +36,6 @@ export const getUsersWithPostsAndComments = async() => {
     throw new Error ('Network Error');
   }
 };
-
 
 (async() => {
   await getUsersWithPostsAndComments();
