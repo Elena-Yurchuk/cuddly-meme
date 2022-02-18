@@ -26,7 +26,7 @@ describe('getUsersWithCompletedTodos', () => {
     },
   ];
 
-  test('getUsersWithCompletedTodos', async() => {
+  beforeEach(() => {
     fetch.mockImplementationOnce(() => Promise.resolve({
       json: () => Promise.resolve({data: users}),
     }));
@@ -36,10 +36,36 @@ describe('getUsersWithCompletedTodos', () => {
       json: () => Promise.resolve({ data: todos}),
     }));
 
+  });
+
+  test('getUsersWithCompletedTodos', async() => {
     const result = await getUsersWithCompletedTodos();
 
     expect(result).toEqual([{
-      id: 7, name: 'Elena', todos:[],
+      id: 7, name: 'Elena', todos,
     }]);
+  });
+
+  test('fetch should be called twice', async() => {
+    fetch.mockImplementationOnce(() => Promise.resolve({
+      json: () => Promise.resolve({data: users}),
+    }));
+    
+
+    fetch.mockImplementationOnce(() => Promise.resolve({
+      json: () => Promise.resolve({ data: todos}),
+    }));
+    
+    await getUsersWithCompletedTodos();
+
+    expect(fetch).toHaveBeenCalledTimes(2);
+
+    expect(fetch).toHaveBeenCalledWith(
+      'https://jsonplaceholder.typicode.com/users',
+    );
+
+    expect(fetch).toHaveBeenCalledWith(
+      'https://jsonplaceholder.typicode.com/todos',
+    );
   });
 });
