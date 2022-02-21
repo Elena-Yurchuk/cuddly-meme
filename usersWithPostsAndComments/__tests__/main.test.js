@@ -27,9 +27,9 @@ describe('getUsersWithPostsAndComments', () => {
   ];
 
   test('axios should be called three times', async() => {
-    axios.get.mockResolvedValue({data: users});
-    axios.get.mockResolvedValue({data: posts});
-    axios.get.mockResolvedValue({data: comments});
+    axios.get.mockResolvedValueOnce({data: users});
+    axios.get.mockResolvedValueOnce({data: posts});
+    axios.get.mockResolvedValueOnce({data: comments});
 
     await getUsersWithPostsAndComments();
 
@@ -49,9 +49,9 @@ describe('getUsersWithPostsAndComments', () => {
   });
 
   test('should return merged array', async() => {
-    axios.get.mockResolvedValue({data: users});
-    axios.get.mockResolvedValue({data: posts});
-    axios.get.mockResolvedValue({data: comments});
+    axios.get.mockImplementationOnce(() => Promise.resolve({data: users}));
+    axios.get.mockImplementationOnce(() => Promise.resolve({data: posts}));
+    axios.get.mockImplementationOnce(() => Promise.resolve({data: comments}));
 
     const result = await getUsersWithPostsAndComments();
 
@@ -78,12 +78,12 @@ describe('getUsersWithPostsAndComments', () => {
   });
 
   test('if no match user with posts and comments then object of user should contain key posts with empty array', async() => {
-    axios.get.mockResolvedValue({data: {
+    axios.get.mockResolvedValueOnce({data: [{
       id: 1, 
       name: 'Elena', 
-    }});
-    axios.get.mockResolvedValue({data: posts});
-    axios.get.mockResolvedValue({data: comments});
+    }]});
+    axios.get.mockResolvedValueOnce({data: []});
+    axios.get.mockResolvedValueOnce({data: []});
 
     const result = await getUsersWithPostsAndComments();
 
@@ -91,7 +91,7 @@ describe('getUsersWithPostsAndComments', () => {
       {
         id: 1, 
         name: 'Elena',
-        posts,
+        posts: [],
       
       },
     ]);
