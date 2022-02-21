@@ -11,24 +11,38 @@ beforeEach(() => {
 });
 
 describe('sortedListOfProducts', () => {
-  beforeEach(() => {
-    fetch.mockImplementationOnce(() => Promise.resolve({
-      json: () => Promise.resolve([{category: 'b'}, {category: 'a'}]),
-    }));
+  describe('when API call is successful', () => {
+    beforeEach(() => {
+      fetch.mockImplementationOnce(() => Promise.resolve({
+        json: () => Promise.resolve([{category: 'b'}, {category: 'a'}]),
+      }));
+    });
+  
+    test('sortedListOfProducts', async() => {
+      const result = await sortedListOfProducts();
+  
+      expect(result).toEqual([{category: 'a'}, {category: 'b'}]);
+    });
+  
+    test('fetch should be called once with https://fakestoreapi.com/products', async() => {
+      await sortedListOfProducts();
+  
+      expect(fetch).toHaveBeenCalledTimes(1);
+  
+      expect(fetch).toHaveBeenCalledWith(
+        'https://fakestoreapi.com/products');
+    });
   });
 
-  test('sortedListOfProducts', async() => {
-    const result = await sortedListOfProducts();
+  describe('when API Throws Errors', () => {
+    test('get fails', async() => {
+      const errorMessage = 'Error: ';
 
-    expect(result).toEqual([{category: 'a'}, {category: 'b'}]);
-  });
+      fetch.mockImplementationOnce(() =>
+        Promise.reject(new Error(errorMessage)),
+      );
 
-  test('fetch should be called once with https://fakestoreapi.com/products', async() => {
-    await sortedListOfProducts();
-
-    expect(fetch).toHaveBeenCalledTimes(1);
-
-    expect(fetch).toHaveBeenCalledWith(
-      'https://fakestoreapi.com/products');
+      await expect(sortedListOfProducts()).rejects.toThrow(errorMessage);
+    });
   });
 });
