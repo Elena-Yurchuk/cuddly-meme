@@ -1,8 +1,8 @@
-const productsEndpoint = 'https://fakestoreapi.com/products';
+const PRODUCTS_ENDPOINT = 'https://fakestoreapi.com/products';
 
 export const sortedListOfProducts = async() => {
   try {
-    const listResponse = await fetch(productsEndpoint);
+    const listResponse = await fetch(PRODUCTS_ENDPOINT);
 
     const list = await listResponse.json();
     
