@@ -70,4 +70,16 @@ describe('getUsersWithCompletedTodos', () => {
       );
     });
   });
+
+  describe('when API Throws Errors', () => {
+    test('get fails', async() => {
+      const errorMessage = 'Network Error';
+
+      fetch.mockImplementationOnce(() =>
+        Promise.reject(new Error(errorMessage)),
+      );
+
+      await expect(Promise.reject(new Error(errorMessage))).rejects.toThrow('Network Error');
+    });
+  });
 });
