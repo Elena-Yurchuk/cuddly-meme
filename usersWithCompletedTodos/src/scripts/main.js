@@ -1,7 +1,3 @@
-// const dotenv = require('dotenv');
-
-// dotenv.config();
-
 const USERS_ENDPOINT = 'https://jsonplaceholder.typicode.com/users';
 
 const TODOS_ENDPOINT = 'https://jsonplaceholder.typicode.com/todos';
@@ -24,13 +20,13 @@ export const getUsersWithCompletedTodos = async() => {
           .filter((todo) => user.id === todo.userId && todo.completed),   
       };
     });
-  
+
     return allUsers;
   } catch (error) {
     throw new Error ('Network Error');
   }
 };
- 
+
 (async() => {
   await getUsersWithCompletedTodos(); 
 });
