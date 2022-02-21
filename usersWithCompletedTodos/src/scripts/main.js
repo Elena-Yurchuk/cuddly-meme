@@ -12,7 +12,7 @@ export const getUsersWithCompletedTodos = async() => {
 
   const users = await usersRes.json();
 
-  const allUsers = Array.from(users).map((user) => {
+  const allUsers = users.map((user) => {
     return {
       ...user,
       todos: todos

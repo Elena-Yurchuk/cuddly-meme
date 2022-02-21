@@ -28,12 +28,12 @@ describe('getUsersWithCompletedTodos', () => {
 
   beforeEach(() => {
     fetch.mockImplementationOnce(() => Promise.resolve({
-      json: () => Promise.resolve({data: users}),
+      json: () => Promise.resolve(users),
     }));
     
 
     fetch.mockImplementationOnce(() => Promise.resolve({
-      json: () => Promise.resolve({ data: todos}),
+      json: () => Promise.resolve(todos),
     }));
 
   });
@@ -48,12 +48,12 @@ describe('getUsersWithCompletedTodos', () => {
 
   test('fetch should be called twice', async() => {
     fetch.mockImplementationOnce(() => Promise.resolve({
-      json: () => Promise.resolve({data: users}),
+      json: () => Promise.resolve(users),
     }));
     
 
     fetch.mockImplementationOnce(() => Promise.resolve({
-      json: () => Promise.resolve({ data: todos}),
+      json: () => Promise.resolve(todos),
     }));
     
     await getUsersWithCompletedTodos();
