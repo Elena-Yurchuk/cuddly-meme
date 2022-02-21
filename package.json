@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type":"commonjs",
+  "type": "commonjs",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:one": "jest ./usersWithCompletedTodos/tests/main.test.js",
-    "start": "nodemon ./main.js -- --require node_modules/dotenv/config"
+    "start": "nodemon main.js"
   },
   "author": "Elena",
   "license": "ISC",
@@ -24,7 +24,8 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "jest": "^27.4.7"
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.15"
   },
   "dependencies": {
     "@babel/core": "^7.16.10",
