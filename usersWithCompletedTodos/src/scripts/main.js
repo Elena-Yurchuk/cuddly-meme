@@ -1,12 +1,10 @@
-const USERS_ENDPOINT = 'https://jsonplaceholder.typicode.com/users';
-
-const TODOS_ENDPOINT = 'https://jsonplaceholder.typicode.com/todos';
+import { } from 'dotenv/config';
 
 export const getUsersWithCompletedTodos = async() => {
   try {
     const [usersRes, todosRes] = await Promise.all([
-      fetch(USERS_ENDPOINT),
-      fetch(TODOS_ENDPOINT),
+      fetch(process.env.USERS_ENDPOINT),
+      fetch(process.env.TODOS_ENDPOINT),
     ]);
   
     const todos = await todosRes.json();
