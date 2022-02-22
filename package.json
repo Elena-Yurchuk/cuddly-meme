@@ -2,8 +2,8 @@
   "name": "learnjs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "commonjs",
+  "main": "main.js",
+  "type": "module",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
@@ -32,6 +32,8 @@
     "@babel/preset-env": "^7.16.11",
     "axios": "^0.26.0",
     "babel-jest": "^27.4.6",
+    "babel-plugin-dotenv-import": "^2.2.0",
+    "babel-preset-expo": "^9.0.2",
     "dotenv": "^16.0.0"
   }
 }
