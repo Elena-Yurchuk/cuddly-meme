@@ -1,17 +1,12 @@
 import axios from 'axios';
-
-const USERS_ENDPOINT = 'https://jsonplaceholder.typicode.com/users';
-
-const POSTS_ENDPOINT = 'https://jsonplaceholder.typicode.com/posts';
-
-const COMMENTS_ENDPOINT = 'https://jsonplaceholder.typicode.com/comments';
+import { } from 'dotenv/config';
 
 export const getUsersWithPostsAndComments = async() => {
   try {
     const [usersRes, postsRes, commentsRes] = await Promise.all([
-      axios.get(USERS_ENDPOINT),
-      axios.get(POSTS_ENDPOINT),
-      axios.get(COMMENTS_ENDPOINT),
+      axios.get(process.env.USERS_ENDPOINT),
+      axios.get(process.env.POSTS_ENDPOINT),
+      axios.get(process.env.COMMENTS_ENDPOINT),
     ]);
       
     const users = usersRes.data;
@@ -36,6 +31,7 @@ export const getUsersWithPostsAndComments = async() => {
     throw new Error ('Network Error');
   }
 };
+
 
 (async() => {
   await getUsersWithPostsAndComments();
