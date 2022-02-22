@@ -1,8 +1,8 @@
-const PRODUCTS_ENDPOINT = 'https://fakestoreapi.com/products';
+import { } from 'dotenv/config';
 
 export const sortedListOfProducts = async() => {
   try {
-    const listResponse = await fetch(PRODUCTS_ENDPOINT);
+    const listResponse = await fetch(process.env.PRODUCTS_ENDPOINT);
 
     const list = await listResponse.json();
     
