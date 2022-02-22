@@ -32,11 +32,9 @@ describe('getUsersWithCompletedTodos', () => {
         json: () => Promise.resolve(users),
       }));
       
-  
       fetch.mockImplementationOnce(() => Promise.resolve({
         json: () => Promise.resolve(todos),
       }));
-  
     });
   
     test('getUsersWithCompletedTodos', async() => {
@@ -48,15 +46,6 @@ describe('getUsersWithCompletedTodos', () => {
     });
   
     test('fetch should be called twice', async() => {
-      fetch.mockImplementationOnce(() => Promise.resolve({
-        json: () => Promise.resolve(users),
-      }));
-      
-  
-      fetch.mockImplementationOnce(() => Promise.resolve({
-        json: () => Promise.resolve(todos),
-      }));
-      
       await getUsersWithCompletedTodos();
   
       expect(fetch).toHaveBeenCalledTimes(2);
