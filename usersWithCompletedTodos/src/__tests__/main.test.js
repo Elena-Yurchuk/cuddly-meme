@@ -68,7 +68,7 @@ describe('getUsersWithCompletedTodos', () => {
         Promise.reject(new Error(errorMessage)),
       );
 
-      await expect(Promise.reject(new Error(errorMessage))).rejects.toThrow('Network Error');
+      await expect(getUsersWithCompletedTodos()).rejects.toThrow(errorMessage);
     });
   });
 });
